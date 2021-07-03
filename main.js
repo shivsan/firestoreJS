@@ -9,12 +9,19 @@ admin.initializeApp({
 const firestore = admin.firestore()
 
 writeToFirestore();
-
+readFromFirestore();
 function writeToFirestore() {
     firestore
         .collection("test")
         .doc("new")
         .set({"id": 1})
         .then((result, err) => console.log(result))
+}
 
+function readFromFirestore() {
+    firestore
+        .collection("test")
+        .doc("new")
+        .get()
+        .then((result, err) => console.log(result.data()))
 }
