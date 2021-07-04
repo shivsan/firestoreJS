@@ -10,6 +10,7 @@ const firestore = admin.firestore()
 
 writeToFirestore();
 readFromFirestore();
+
 function writeToFirestore() {
     firestore
         .collection("test")
